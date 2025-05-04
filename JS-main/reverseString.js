@@ -34,3 +34,10 @@ console.log(abcd(nums));
 
 
 // 
+function reverseWords(sentence) {
+  const reverseWOrd = sentence.split(" ").map(ele => ele.split("").reverse().join("")).join(" ") 
+ return reverseWOrd
+}
+
+
+module.exports = reverseWords

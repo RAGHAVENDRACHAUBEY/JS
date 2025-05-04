@@ -16,8 +16,7 @@ console.log(greet.apply(sayHi, ["20"])); // output Raghav 20
 
 // Bind
 
-// the bind method of function create a new function that when called this function with its this keyword set to the provided
-// value, with a given sequence of arguments preceeding any provided value when the new function is called.
+// /The bind() method creates a new function that, when called, has its this keyword set to the provided value.
 const person = {
   firstName: "John",
   lastName: "Doe",
@@ -31,3 +30,26 @@ console.log(getFullName()); // Output: undefined undefined
 
 const boundGetFullName = person.fullName.bind(person);
 console.log(boundGetFullName()); // Output: John Doe
+
+function greet(greeting, punctuation) {
+  console.log(greeting + ', ' + this.name + punctuation);
+}
+
+const persons = { name: 'Mike' };
+const greetMike = greet.bind(persons);
+
+greetMike('Hey', '?'); // Output: "Hey, Mike?"
+
+// Binding arguments example
+function add(a, b) {
+  return a + b;
+}
+
+const addFive = add.bind(null, 5);
+console.log(addFive(3)); // Output: 8
+
+// Comparison Table
+// Method	-Invokes Immediately	-Arguments Passing	-Returns
+// call   -	Yes	                 -Individual	       -Result
+// apply	 -Yes	                    -Array	            -Result
+// bind	   -No	                   -Individual/Array	 -Function
