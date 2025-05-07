@@ -21,3 +21,21 @@ function countOccurrences(arr) {
 }
 
 countOccurrences(array);
+
+
+// second method
+
+let counts = {};
+  for (let i = 0; i< arr.length; i++) {
+    let num = arr[i];
+    if(counts[num]){
+      counts[num]++
+    }else{
+      counts[num]= 1
+    }
+
+  }
+  for(let key in counts){
+  console.log(key + " " + counts[key])
+
+}

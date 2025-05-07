@@ -16,3 +16,7 @@ for (let i = 0; i < array.length; i++) {
   }
 }
 console.log(uniqueArray);
+
+
+// Second Method using 
+let uniqueArray2 = array.filter((item,index)=> array.indexOf(item)==index);
