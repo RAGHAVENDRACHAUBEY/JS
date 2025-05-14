@@ -48,3 +48,24 @@ setCount(count + 1);
     </div>
   );
 }
+
+
+// Is FlatList a Pure Component?
+// No, FlatList is not inherently a PureComponent or memoized. However, it has built-in optimizations to minimize unnecessary re-renders.
+
+// How FlatList Optimizes Performance
+// Item Recycling (Virtualization)
+
+// Unlike ScrollView, FlatList only renders items that are visible on the screen (or about to be visible), improving performance for large lists.
+
+// It recycles off-screen items to reduce memory usage.
+
+// React.memo or PureComponent for List Items
+
+// While FlatList itself is not pure, you should optimize individual list items using:
+
+// React.memo() (for functional components)
+
+// PureComponent (for class components)
+
+// This prevents unnecessary re-renders of list items when props don't change.
