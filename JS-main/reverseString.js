@@ -41,3 +41,34 @@ function reverseWords(sentence) {
 
 
 module.exports = reverseWords
+
+// Write a function to reverse a string without using built-in .reverse().
+
+
+let wordString = "Hello"
+
+let string =""
+for(let i = wordString.length-1; i>=0; i--){
+  string += wordString[i];
+
+}
+console.log(string)
+
+
+
+
+// different question
+function getInitials(name) {
+  const words = name.trim().split(" ");
+  let initials = '';
+  for (let word of words) {
+    if (word.length > 0) {
+      initials += word[0].toUpperCase();
+    }
+  }
+  return initials;
+}
+
+// Example usage:
+let s = "Manish Tomar";
+console.log(getInitials(s)); // Output: "MT"
